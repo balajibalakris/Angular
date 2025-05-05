@@ -18,7 +18,7 @@ export class AppComponent {
 constructor(private userService: UserService) {}
 
   title = 'first-angular-app';
-
+  // Adding some comments to test the branching in git.
    
   selectedUserId?: string;
 
