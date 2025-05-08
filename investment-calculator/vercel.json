@@ -1,17 +1,16 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
-  "builds": [
     {
-      "src": "dist/investment-calculator/**/*",
-      "use": "@vercel/static"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/investment-calculator/src/index.html"
+      "dest": "dist/investment-calculator/index.html"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
