@@ -4,14 +4,14 @@
   ],
   "builds": [
     {
-      "src": "dist/your-app-name/**/*",
+      "src": "dist/investment-calculator/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/your-app-name/index.html"
+      "dest": "dist/investment-calculator/src/index.html"
     }
   ]
 }
