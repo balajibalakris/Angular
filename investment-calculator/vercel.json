@@ -4,13 +4,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/investment-calculator/index.html"
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
