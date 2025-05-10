@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InvestmentFormComponent } from "./investment-form/investment-form.component";
 import { SummaryTableComponent } from "./summary-table/summary-table.component";
 import { InvestmentStats } from './investment-form/investment-stats.model';
 import { InvestmentService } from './investment-form/investment.services';
 import { InvestmentCalculations } from './investment-form/investment-calculations.model';
+import { inv_service_token } from '../main';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ export class AppComponent {
   title = 'investment-calculator';
   investmentData : InvestmentCalculations[] = [];
 
-  constructor(private investmentService : InvestmentService){}
+  //constructor(private investmentService : InvestmentService){}
+
+  private investmentService = inject(inv_service_token);
 
   isCalculationsAvailable = false;
 
@@ -29,8 +32,9 @@ export class AppComponent {
 
   calculate(stats : InvestmentStats)
   {
-    this.investmentData = this.investmentService.calculateInvestmentStats(stats);
-    alert("completed");
+    this.investmentData = [];
+    this.investmentData = this.investmentService.calculateInvestmentStats(this.investmentData, stats);
+    // alert("completed");
   }
   
   
